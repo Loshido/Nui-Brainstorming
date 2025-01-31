@@ -1,0 +1,18 @@
+#tete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* on espace les élements dans sur la ligne */
+    align-items: center; /* On aligne la ligne  */
+
+    padding: 0 100px;
+}
+#tete > img{
+    max-height: 100px;
+    width: auto;
+}
+
+#tete > nav{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
