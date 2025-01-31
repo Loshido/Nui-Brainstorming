@@ -12,13 +12,13 @@ export default component$(({ connecte }: Props) => {
     return <header id="tete">
         <Profil/> {/* Le logo du site */}
         <nav>
-            <Link>
+            <Link href="/">
                 Accueil
             </Link>
-            <Link>
+            <Link href="/planning">
                 Planning
             </Link>
-            <Link>
+            <Link href="/classements">
                 Classements
             </Link>
             {

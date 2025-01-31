@@ -16,3 +16,13 @@
     flex-direction: row;
     gap: 16px;
 }
+
+#tete a{
+    text-decoration: unset;
+    color: black;
+
+    transition: color .2s ease-in-out;
+}
+#tete a:hover{
+    color: #0006;
+}
