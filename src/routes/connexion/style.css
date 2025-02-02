@@ -1,0 +1,26 @@
+#connexion{
+    padding: 100px 150px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#connexion input{
+    padding: 8px 16px;
+    font-size: 1.2em;
+    width: fit-content;
+    outline: none;
+    border: 1px solid #0002;
+    border-radius: 5px;
+}
+#connexion input[type="submit"]{
+    cursor: pointer;
+    background-color: #177AB4;
+    color: white;
+
+    transition: background-color .2s ease-in-out;
+}
+#connexion input[type="submit"]:hover{
+    background-color: #177AB4A0;
+}

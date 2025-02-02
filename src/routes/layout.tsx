@@ -1,21 +1,45 @@
-import { component$, Slot } from "@builder.io/qwik";
-import type { RequestHandler } from "@builder.io/qwik-city";
+import { component$, createContextId, noSerialize, Signal, Slot, useContextProvider, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { useLocation, useNavigate } from "@builder.io/qwik-city";
+import Footer from "~/components/Footer";
 import Header from "~/components/Header";
+import type { Connection } from "~/lib/db";
+import db from "~/lib/db";
 
-export const onGet: RequestHandler = async ({ cacheControl }) => {
-  // Control caching for this request for best performance and to reduce hosting costs:
-  // https://qwik.dev/docs/caching/
-  cacheControl({
-    // Always serve a cached response by default, up to a week stale
-    staleWhileRevalidate: 60 * 60 * 24 * 7,
-    // Max once every 5 seconds, revalidate on the server to get a fresh version of this page
-    maxAge: 5,
-  });
-};
+export const connectionCtx = createContextId<Signal<Connection>>('connection')
+
 
 export default component$(() => {
+    const loc = useLocation()
+    const nav = useNavigate()
+    const database = useSignal<Connection>();
+    useContextProvider(connectionCtx, database);
+
+    // eslint-disable-next-line qwik/no-use-visible-task
+    useVisibleTask$(async () => {
+        try {
+            const connection = await db();
+            database.value = noSerialize(connection);
+
+            console.info("Connexion avec la base de données établit")
+            
+            const token = localStorage.getItem('token');
+            if(!token && loc.url.pathname.startsWith('/dash')) {
+                nav('/')
+                return;
+            } else if(!token) return;
+            
+            await database.value?.authenticate(token);
+            console.info("Client authentifié avec succès")
+        } catch {
+            if(loc.url.pathname.startsWith('/dash')) {
+                nav('/')
+            }
+        }
+    })
+
     return <>
-        <Header connecte={false}/>
+        <Header/>
         <Slot />
+        <Footer/>
     </>;
 });

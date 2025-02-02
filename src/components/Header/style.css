@@ -2,13 +2,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* on espace les élements dans sur la ligne */
+    gap: 25px;
     align-items: center; /* On aligne la ligne  */
-
     padding: 0 100px;
+    border-bottom: 1px solid #0002;
 }
-#tete > img{
+
+#tete img{
     max-height: 100px;
     width: auto;
+    padding: 25px  10px;
 }
 
 #tete > nav{
@@ -20,9 +23,69 @@
 #tete a{
     text-decoration: unset;
     color: black;
-
     transition: color .2s ease-in-out;
+    font-family: "Mont";
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: #0000;
+
+    transition: all .3s ease-in-out;
 }
+
+
 #tete a:hover{
-    color: #0006;
+    text-decoration-color: #0007;
 }
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+.logo > p{
+    text-decoration: none;
+    font-size: x-large;
+    font-family: "Mont";
+    font-weight: 600;
+}
+
+#icon{
+    display: none;
+}
+
+@media screen and (max-width: 800px){
+    #tete{
+        padding: 10px 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    #tete img{
+        max-height: 50px;
+        padding: 10px  5px;
+    }
+    #tete > nav.active{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #0002;
+    }
+
+    #text{
+        display: none;
+    }
+
+    #icon{
+        display : contents;
+    }
+
+}
+

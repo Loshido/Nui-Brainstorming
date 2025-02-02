@@ -1,0 +1,189 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#Presentation {
+    min-height: 100vh;
+    background-image: url(/public/monde.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.text{
+    margin-top: 5em;
+    color: white;
+    font-size: xx-large;
+}
+
+.screen{
+    margin: 10% 0 0 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.color{
+    background-color: #009FE3;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.pageAccueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.pageAccueil h1 {
+    font-family: "Mont";
+    font-weight: 800;
+}
+
+.pageAccueil h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+.imageAccueil img {
+    border-radius: 5px;
+    height: 50%;
+    width: 50%;
+    margin: 4%;
+}
+
+.quoiround {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 60px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#titre-section{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 25px;
+}
+
+.round img {
+    border-radius: 90%;
+    align-items: center;
+    width: 10pc;
+    height: 10pc;
+}
+
+.round p {
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0;
+}
+
+.square {
+    border-radius: 5px;
+    border-color: #575756;
+    border: solid;
+    background-color: white;
+    height: 25pc;
+    width: 20pc;
+}
+
+.square img {
+    height: 10pc;
+    width: auto;
+    border : 0 0 1 0;
+    border-bottom: #575756;
+    border-bottom-style: double;
+}
+
+.square p {
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+.square q {
+    width : 20vw;
+}
+
+.quisquare {
+    display: flex;
+    flex-direction: line;
+    justify-content: center;
+    text-align: center;
+    gap: 5pc;
+    margin-bottom: 2em;
+    /* background: linear-gradient(#f7cd00,#f9b233); */
+    margin: 10px 60px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Partie sur le carousel */
+.container {
+    overflow: hidden;
+}
+
+/* partie accordeons */
+.pageAccueil input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+@media screen and (max-width: 800px) {
+    .round{
+        align-items: center;
+    }
+    .pageAccueil h1 {
+        font-size: 1.5em;
+    }
+
+    .pageAccueil h3 {
+        font-size: 1em;
+    }
+
+    .imageAccueil img {
+        height: auto;
+        width: 90%;
+        margin: 2%;
+    }
+
+    .quisquare{
+        flex-direction: column;
+    }
+
+    .quoisquare,
+    .quoiround {
+        flex-direction: column;
+        flex-basis: auto;
+        align-items: center;
+        gap: 2em;
+        margin: 10px 20px;
+        padding: 5px;
+    }
+
+    .round img,
+    .square img {
+        width: 50%;
+        height: auto;
+    }
+}
+
+
+#image-bizazrre{
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+}

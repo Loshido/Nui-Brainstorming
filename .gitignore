@@ -9,6 +9,8 @@ node_modules
 .env
 *.local
 
+./data
+
 # Cache
 .cache
 .mf

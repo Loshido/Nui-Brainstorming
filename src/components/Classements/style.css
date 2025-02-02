@@ -1,0 +1,40 @@
+#podium{
+    margin: 70px 20px 20px 20px;
+    position: relative;
+    height: 400px;
+    width: 671px;
+    margin: 0 auto;
+}
+
+#podium > svg{
+    height: 400px;
+    width: 671px;
+}
+
+#podium > p{
+    width: 150px;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+}
+#podium > p > img{
+    width: 128px;
+    height: 128px;
+}
+
+#podium > p:nth-child(2) {
+    bottom: 190px;
+    left: 90px;
+}
+#podium > p:nth-child(1) {
+    bottom: 275px;
+    left: 265px;
+}
+#podium > p:nth-child(3) {
+    bottom: 150px;
+    right: 80px;
+}
